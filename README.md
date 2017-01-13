@@ -1,2 +1,2 @@
 # jennyseong.github.io
-# wassup
+This is for experimenting with life lol
