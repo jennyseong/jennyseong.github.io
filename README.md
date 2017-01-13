@@ -1,1 +1,0 @@
-# jennyseong.github.io
