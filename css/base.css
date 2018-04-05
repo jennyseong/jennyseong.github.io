@@ -881,7 +881,8 @@ button.currentPage:hover {
 
 #preloaderImage {
 	width: 100px;
-	margin: 30px auto;
+	margin-left: auto;
+  margin-right: auto;
 	margin-top: 100px;
 }
 
