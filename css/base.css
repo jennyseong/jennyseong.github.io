@@ -1486,25 +1486,12 @@ p {
 			font-size: 14px;
 		}
 
-		p {
-			margin-left: 0px;
-			margin-right: 0px
-		}
-
 		nav {
 			padding-top: 45px;
 		}
 
 		.thumbnailMask {
 			background-size: 364px 224px;
-		}
-
-		.kodama_story {
-			background-color: rgba(255, 255, 255, 0.5);
-			padding-left: 10px;
-			padding-right: 10px;
-			margin: 10px 0px 10px 0px;
-			border-radius: 15px;
 		}
 
 	}
@@ -1533,6 +1520,19 @@ p {
 
 	/* All mobile sizes (devices and browser) */
 	@media only screen and (max-width: 767px) {
+
+		p {
+			margin-left: 0px;
+			margin-right: 0px
+		}
+
+		.kodama_story {
+			background-color: rgba(255, 255, 255, 0.5);
+			padding-left: 10px;
+			padding-right: 10px;
+			margin: 10px 0px 10px 0px;
+			border-radius: 15px;
+		}
 
 		header {
 			padding-top: 40px;
