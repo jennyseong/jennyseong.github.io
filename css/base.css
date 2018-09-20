@@ -141,6 +141,10 @@ Contents
 		max-width: 100%;
 		height: auto; }
 
+	img.rounded-corners {
+	border-radius: 20px;
+	}
+
 /*===================================================================================================
 7) Buttons
 ===================================================================================================*/
@@ -1223,7 +1227,7 @@ p, .projectInfo p, .projectInfo li {
 }
 
 #detailView img {
-	padding-bottom: 12px;
+	margin-bottom: 12px;
 }
 
 #detailViewImages {
