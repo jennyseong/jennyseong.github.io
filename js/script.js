@@ -28,7 +28,8 @@ $(document).ready(function()
 	$(".videoInfo").css("display", "inline");
 
 	// Move projects to second column
-	$(".project:odd").appendTo("#col2");
+	$("#work .project:odd").appendTo("#col2");
+	$("#work2 .project:odd").appendTo("#col2_2");
 
 	// Project thumbnail hover
 	$(".projectThumbnail").on("mouseenter", function(e)
@@ -62,18 +63,34 @@ $(document).ready(function()
 	// Page navigation
 	var isWorkCurrentPage = true;
 	var isAboutCurrentPage = false;
+	var isWork2CurrentPage = false;
 
 	$("#logoDetailView").click(function()
 	{
 		window.location = "../../";
 	});
 
-	$("#workPage, #logo").click(function()
+	$("#workPage, #logo, #featuredWork").click(function()
 		{
-			if(!isWorkCurrentPage)
+			if(!isWorkCurrentPage & isWork2CurrentPage)
 			{
 				isWorkCurrentPage = true;
 				isAboutCurrentPage = false;
+				isWork2CurrentPage = false;
+				$("#workPage").attr("class", "currentPage");
+				$("#aboutPage").removeClass("currentPage");
+
+				$("#work2").fadeOut(500, function()
+				{
+					$("#work").fadeIn(500);
+				});
+			}
+
+			if(!isWorkCurrentPage & isAboutCurrentPage)
+			{
+				isWorkCurrentPage = true;
+				isAboutCurrentPage = false;
+				isWork2CurrentPage = false;
 				$("#workPage").attr("class", "currentPage");
 				$("#aboutPage").removeClass("currentPage");
 
@@ -82,18 +99,50 @@ $(document).ready(function()
 					$("#work").fadeIn(500);
 				});
 			}
+
 		});
+
+	$("#moreWork").click(function()
+			{
+				if(!isWork2CurrentPage)
+				{
+					isWorkCurrentPage = false;
+					isWork2CurrentPage = true;
+					isAboutCurrentPage = false;
+
+					$("#work").fadeOut(500, function()
+					{
+						$("#work2").fadeIn(500);
+					});
+				}
+			});
+
 
 	$("#aboutPage").click(function()
 		{
-			if(!isAboutCurrentPage)
+			if(!isAboutCurrentPage & isWorkCurrentPage)
 			{
-				isAboutCurrentPage = true;
 				isWorkCurrentPage = false;
+				isWork2CurrentPage = false;
+				isAboutCurrentPage = true;
 				$("#aboutPage").attr("class", "currentPage");
 				$("#workPage").removeClass("currentPage");
 
 				$("#work").fadeOut(500, function()
+				{
+					$("#about").fadeIn(500);
+				});
+			}
+
+			if(!isAboutCurrentPage & isWork2CurrentPage)
+			{
+				isWorkCurrentPage = false;
+				isWork2CurrentPage = false;
+				isAboutCurrentPage = true;
+				$("#aboutPage").attr("class", "currentPage");
+				$("#workPage").removeClass("currentPage");
+
+				$("#work2").fadeOut(500, function()
 				{
 					$("#about").fadeIn(500);
 				});
@@ -106,6 +155,7 @@ $(document).ready(function()
 	// Hide About page
 	//$("#about").css("display", "none");
 	$("#about").fadeOut(0);
+	$("#work2").fadeOut(0);
 
 	// For site fade site in
 	$(".container").css("display", "none");
